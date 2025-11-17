@@ -98,8 +98,8 @@
             top: 0;
             left: 0;
             right: 0;
-            background: var(--white);
-            box-shadow: var(--shadow);
+            background: linear-gradient(to bottom, #f1f8e9, #ffffff);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 999;
             padding: 1rem 2rem;
             display: flex;
@@ -440,6 +440,30 @@
         
         .phone-btn i {
             font-size: 1.1rem;
+        }
+        
+        /* Burger Menu Button */
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            background: rgba(67, 160, 71, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .burger:hover {
+            background: rgba(67, 160, 71, 0.2);
+        }
+        
+        .burger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+            border-radius: 2px;
         }
         
         /* Hero Section */
@@ -1691,7 +1715,7 @@
             <h1>Achieve more when farming with us!</h1>
             <p>At <span class="brand-name">Makamithi</span>, we empower farmers across Kenya by enhancing their skills, expanding market access, and strengthening their financial resources. Together, we cultivate a sustainable future for agriculture in our nation.</p>
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary"><i class="fas fa-question-circle"></i> Ask us a question</a>
+                <a href="https://wa.me/254768164336?text=Hello%20Makamithi,%20I%20have%20a%20question" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Ask us a question</a>
                 <a href="#products" class="btn btn-secondary"><i class="fas fa-arrow-right"></i> Discover our products</a>
             </div>
         </div>
