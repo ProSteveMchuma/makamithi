@@ -1,0 +1,1 @@
+Replace the entire products section with this code. The products should now scroll horizontally and we'll add the partners section after it.
