@@ -1,0 +1,25 @@
+# Robots.txt for Makamithi
+# Allow all web crawlers to access all content
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://makamithi.inspirehub.co.ke/sitemap.xml
+
+# Crawl-delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Disallow access to specific directories (if needed in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow Google Image Bot
+User-agent: Googlebot-Image
+Allow: /assets/
+
+# Allow all assets for crawlers
+Allow: /assets/images/
+Allow: /assets/products/
+Allow: /assets/partners/
+Allow: /assets/logos/
