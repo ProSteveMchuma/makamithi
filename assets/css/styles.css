@@ -887,6 +887,8 @@
             transition: all 0.3s ease;
             flex-shrink: 0;
             padding: 1rem;
+            text-decoration: none;
+            cursor: pointer;
         }
         
         .partner-logo img {
@@ -897,6 +899,7 @@
             object-fit: contain;
             filter: grayscale(100%);
             transition: filter 0.3s ease;
+            pointer-events: none;
         }
         
         .partner-logo:hover {
