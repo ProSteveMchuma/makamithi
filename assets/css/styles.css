@@ -36,7 +36,7 @@
         /* Navigation */
         .navbar {
             position: fixed;
-            left: 2rem;
+            left: -100px;
             top: 50%;
             transform: translateY(-50%);
             background: var(--white);
@@ -44,10 +44,11 @@
             z-index: 1000;
             border-radius: 25px;
             padding: 1rem 0.75rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
         
         .navbar:hover {
+            left: 2rem;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
         
