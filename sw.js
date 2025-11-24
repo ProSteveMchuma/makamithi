@@ -1,9 +1,10 @@
 // Service Worker for Makamithi Website
-const CACHE_NAME = 'makamithi-v1';
+const CACHE_NAME = 'makamithi-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/assets/css/styles.css',
+  '/assets/js/main.js',
   '/assets/logos/Makamithi Logo.png',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Arizonia&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
