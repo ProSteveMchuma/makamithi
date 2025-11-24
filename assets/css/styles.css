@@ -1023,91 +1023,214 @@
         /* Team Section */
         .team {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 50%, #e8f5e9 100%);
+            position: relative;
+            overflow: hidden;
         }
         
-        .team-content {
+        .team::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(67, 160, 71, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .team .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .team-hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            margin-top: 3rem;
+            margin: 3rem 0 4rem;
         }
         
-        .team-image {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        .team-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(67, 160, 71, 0.3);
         }
         
-        .team-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
+        .team-badge i {
+            font-size: 1.2rem;
         }
         
-        .team-image:hover img {
-            transform: scale(1.05);
-        }
-        
-        .team-text h3 {
-            font-size: 2rem;
+        .team-hero-content h3 {
+            font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
         
-        .team-text p {
+        .team-lead {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+        
+        .team-hero-content p {
             font-size: 1rem;
             line-height: 1.8;
             color: #555;
             margin-bottom: 1.5rem;
         }
         
-        .team-features {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 2rem;
+        .team-hero-image {
+            position: relative;
         }
         
-        .team-feature-item {
+        .team-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-image-wrapper:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-image-wrapper img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .team-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(45, 80, 22, 0.95), transparent);
+            padding: 2rem;
             display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            padding: 1.25rem;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+        
+        .team-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .team-stat i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .team-stat strong {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+        
+        .team-stat span {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .team-features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .team-feature-card {
             background: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .team-feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--secondary-color);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
             transition: all 0.3s ease;
         }
         
-        .team-feature-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        .team-feature-card:hover .feature-icon {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            transform: scale(1.1) rotate(5deg);
         }
         
-        .team-feature-item i {
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-            margin-top: 0.2rem;
-            flex-shrink: 0;
-        }
-        
-        .team-feature-item strong {
-            display: block;
-            font-size: 1.1rem;
+        .feature-icon i {
+            font-size: 2rem;
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
         }
         
-        .team-feature-item p {
-            font-size: 0.9rem;
+        .team-feature-card:hover .feature-icon i {
+            color: var(--white);
+        }
+        
+        .team-feature-card h4 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .team-feature-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
             color: #666;
             margin: 0;
-            line-height: 1.6;
+        }
+        
+        .team-cta {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(67, 160, 71, 0.1), rgba(45, 80, 22, 0.1));
+            border-radius: 20px;
+            margin-top: 2rem;
+        }
+        
+        .team-cta p {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
         
         /* Locations Grid */
@@ -1650,6 +1773,15 @@
                 gap: 3rem;
             }
             
+            .team-hero {
+                gap: 3rem;
+            }
+            
+            .team-features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
             .footer-contact-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1818,8 +1950,38 @@
                 gap: 2rem;
             }
             
-            .team-text h3 {
-                font-size: 1.6rem;
+            .team-hero {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            .team-hero-content {
+                order: 2;
+            }
+            
+            .team-hero-image {
+                order: 1;
+            }
+            
+            .team-hero-content h3 {
+                font-size: 2rem;
+            }
+            
+            .team-image-wrapper img {
+                height: 350px;
+            }
+            
+            .team-features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .team-cta {
+                padding: 2rem 1.5rem;
+            }
+            
+            .team-cta p {
+                font-size: 1.1rem;
             }
             
             .team-feature-item {
@@ -1972,20 +2134,33 @@
                 gap: 1.25rem;
             }
             
-            .team-text h3 {
-                font-size: 1.4rem;
+            .team-hero-content h3 {
+                font-size: 1.6rem;
             }
             
-            .team-feature-item {
-                padding: 0.875rem;
-            }
-            
-            .team-feature-item strong {
+            .team-lead {
                 font-size: 1rem;
             }
             
-            .team-feature-item p {
+            .team-image-wrapper img {
+                height: 280px;
+            }
+            
+            .team-stat strong {
+                font-size: 2rem;
+            }
+            
+            .team-stat span {
+                font-size: 0.8rem;
+            }
+            
+            .team-badge {
                 font-size: 0.85rem;
+                padding: 0.6rem 1.2rem;
+            }
+            
+            .team-cta p {
+                font-size: 1rem;
             }
             
             .partner-logo {
@@ -2026,6 +2201,19 @@
             .team-content {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
+            }
+            
+            .team-hero {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            
+            .team-image-wrapper img {
+                height: 300px;
+            }
+            
+            .team-features-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .products-carousel {
