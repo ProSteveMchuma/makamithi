@@ -918,6 +918,7 @@
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
             scrollbar-color: var(--secondary-color) transparent;
+            animation: scroll-partners 30s linear infinite;
         }
         
         .partners-track::-webkit-scrollbar {
@@ -936,6 +937,19 @@
         
         .partners-track::-webkit-scrollbar-thumb:hover {
             background: var(--primary-color);
+        }
+        
+        @keyframes scroll-partners {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-100% - 4rem));
+            }
+        }
+        
+        .partners-track:hover {
+            animation-play-state: paused;
         }
         
         .partners-slide {
