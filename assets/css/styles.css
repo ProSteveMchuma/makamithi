@@ -912,7 +912,30 @@
             display: flex;
             gap: 4rem;
             margin-top: 3rem;
-            animation: scroll-partners 30s linear infinite;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--secondary-color) transparent;
+        }
+        
+        .partners-track::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .partners-track::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 10px;
+        }
+        
+        .partners-track::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 10px;
+        }
+        
+        .partners-track::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
         }
         
         .partners-slide {
@@ -960,18 +983,7 @@
             filter: grayscale(0%);
         }
         
-        @keyframes scroll-partners {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-100% - 4rem));
-            }
-        }
-        
-        .partners-track:hover {
-            animation-play-state: paused;
-        }
+
         
         .product-btn {
             display: inline-flex;
